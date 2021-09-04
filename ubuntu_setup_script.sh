@@ -30,6 +30,15 @@ echo "installing docker-compose..."
 sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
+echo "installing go...."
+cd
+wget https://golang.org/dl/go1.17.linux-amd64.tar.gz | sudo tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+sudo rm -rf go1.17.linux-amd64.tar.gz
+
+echo "install make...."
+sudo apt install make
+
 echo "installing visual studio code..."
 sudo apt install software-properties-common apt-transport-https wget
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
