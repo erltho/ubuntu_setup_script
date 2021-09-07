@@ -32,8 +32,11 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 echo "installing go...."
 cd
-wget https://golang.org/dl/go1.17.linux-amd64.tar.gz | sudo tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz
+wget https://golang.org/dl/go1.17.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
+echo "export PATH=$PATH:/usr/local/go/bin" >> .bashrc
+source ~/.bashrc
 sudo rm -rf go1.17.linux-amd64.tar.gz
 
 echo "install make...."
@@ -44,3 +47,7 @@ sudo apt install software-properties-common apt-transport-https wget
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt install code
+
+
+echo "installing vim...."
+sudo apt install vim
